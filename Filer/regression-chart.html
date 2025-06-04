@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Glassförsäljning – Linjär regression</title>
+  <style>
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 4px; }
+    canvas {
+      max-width: 400px;
+      max-height: 300px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>Glassförsäljning vs Temperatur</h2>
+
+  <table id="dataTable">
+    <tr><th>Temperatur (°C)</th><th>Glassar sålda</th></tr>
+    <tr><td><input type="number" value="20"></td><td><input type="number" value="100"></td></tr>
+    <tr><td><input type="number" value="22"></td><td><input type="number" value="120"></td></tr>
+    <tr><td><input type="number" value="25"></td><td><input type="number" value="150"></td></tr>
+    <tr><td><input type="number" value="30"></td><td><input type="number" value="200"></td></tr>
+  </table>
+  <br>
+  <button onclick="addRow()">Lägg till rad</button>
+  <button onclick="runRegression()">Beräkna regression</button>
+
+  <h3>Resultat:</h3>
+  <pre id="output"></pre>
+
+  <canvas id="myChart" width="400" height="300"></canvas>
+
+  <script>
+    let chart = null;
+
+    function addRow() {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td><input type="number"></td><td><input type="number"></td>`;
+      document.getElementById("dataTable").appendChild(row);
+    }
+
+    function runRegression() {
+      const rows = Array.from(document.querySelectorAll("#dataTable tr")).slice(1);
+      const x = [], y = [];
+
+      for (const row of rows) {
+        const cells = row.querySelectorAll("input");
+        const xi = parseFloat(cells[0].value);
+        const yi = parseFloat(cells[1].value);
+        if (!isNaN(xi) && !isNaN(yi)) {
+          x.push(xi);
+          y.push(yi);
+        }
+      }
+
+      const n = x.length;
+      if (n < 2) {
+        document.getElementById("output").textContent = "Minst två datapunkter krävs.";
+        return;
+      }
+
+      const sumX = x.reduce((a, b) => a + b, 0);
+      const sumY = y.reduce((a, b) => a + b, 0);
+      const sumXY = x.reduce((acc, xi, i) => acc + xi * y[i], 0);
+      const sumX2 = x.reduce((acc, xi) => acc + xi * xi, 0);
+
+      const a = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+      const b = (sumY - a * sumX) / n;
+
+      const yPred = x.map(xi => a * xi + b);
+      const mse = y.reduce((acc, yi, i) => acc + Math.pow(yi - yPred[i], 2), 0) / n;
+
+      const equation = `y = ${a.toFixed(3)} * x + ${b.toFixed(3)}`;
+      const mseStr = `Mean Squared Error: ${mse.toFixed(2)}`;
+      document.getElementById("output").textContent = `${equation}\n${mseStr}`;
+
+      const sorted = x.map((val, i) => ({ x: val, y: yPred[i] })).sort((a, b) => a.x - b.x);
+      const scatterData = x.map((xi, i) => ({ x: xi, y: y[i] }));
+
+      const chartData = {
+        datasets: [
+          {
+            label: 'Data',
+            data: scatterData,
+            backgroundColor: 'blue',
+            type: 'scatter',
+          },
+          {
+            label: 'Regression',
+            data: sorted,
+            borderColor: 'red',
+            borderWidth: 2,
+            fill: false,
+            type: 'line',
+            pointRadius: 0
+          }
+        ]
+      };
+
+      const config = {
+        type: 'scatter',
+        data: chartData,
+        options: {
+          scales: {
+            x: { title: { display: true, text: 'Temperatur (°C)' } },
+            y: { title: { display: true, text: 'Glassar sålda' } }
+          }
+        }
+      };
+
+      if (chart) chart.destroy();
+      chart = new Chart(document.getElementById('myChart'), config);
+    }
+  </script>
+</body>
+</html>
