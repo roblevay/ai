@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Logic Theorist Demo</title>
+</head>
+<body>
+  <h2>Logic Theorist – Enkel demo</h2>
 
+  <p>Skriv in regler (en per rad, t.ex. <code>A -> B</code>):</p>
+  <textarea id="rules" rows="6" cols="30">
+A -> B
+B -> C
+C -> D
+  </textarea>
+
+  <p>Startfakta (kommaseparerade, t.ex. <code>A</code>):</p>
+  <input id="facts" value="A">
+
+  <br><br>
+  <button onclick="runInference()">Kör inferens</button>
+
+  <h3>Alla kända fakta:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    function runInference() {
+      const ruleLines = document.getElementById("rules").value.trim().split("\n");
+      const rules = ruleLines.map(line => {
+        const [premise, conclusion] = line.split("->").map(x => x.trim());
+        return { premise, conclusion };
+      });
+
+      let known = new Set(document.getElementById("facts").value.split(",").map(x => x.trim()));
+      let changed = true;
+
+      while (changed) {
+        changed = false;
+        for (const rule of rules) {
+          if (known.has(rule.premise) && !known.has(rule.conclusion)) {
+            known.add(rule.conclusion);
+            changed = true;
+          }
+        }
+      }
+
+      document.getElementById("output").textContent = Array.from(known).sort().join(", ");
+    }
+  </script>
+</body>
+</html>
