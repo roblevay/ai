@@ -10,16 +10,9 @@ Begreppet *artificial intelligence* lanserades som ett tekniskt forskningsområd
 
 Att kalla något för *artificiell intelligens* är alltså att säga att det handlar om en **konstgjord form av förståelse eller tänkande**, till skillnad från biologisk eller naturlig intelligens.
 
----
-
-Vill du att den här biten också läggs till i den tidigare Markdown-filen om AI-historik?
 
 
-# En översikt av AI-historiken
-
-Artificiell intelligens (AI) är ett av vår tids mest omdanande teknologiska fält, men dess rötter sträcker sig tillbaka till antiken då myter om mekaniska varelser först formulerades. Den moderna AI-historien började dock på allvar under mitten av 1900-talet, med teoretiska grunder och de första datorerna.
-
-## De tidiga åren 
+# En översikt av AI-historiken-de tidiga åren
 
 Begreppet "artificiell intelligens" myntades 1956 under Dartmouth-konferensen, där forskare som John McCarthy, Marvin Minsky och Claude Shannon samlades. De var optimistiska och trodde att maskiner snart skulle kunna lära sig och resonera som människor.
 
