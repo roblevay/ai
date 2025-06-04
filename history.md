@@ -31,6 +31,7 @@ Startfakta: {'A'}
 Alla kända fakta efter inferens:  
 {'A', 'B', 'C', 'D'}
 
+För exempel, öppna filen logic-demo.html i en web-browser
 
 ## AI-vintrarna
 
