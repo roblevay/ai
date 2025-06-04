@@ -18,6 +18,20 @@ Begreppet "artificiell intelligens" myntades 1956 under Dartmouth-konferensen, d
 
 Under 1950- och 60-talet utvecklades de första AI-programmen, som kunde spela schack eller bevisa matematiska satser. Ett exempel är Logic Theorist (1956) av Newell och Simon. Trots lovande början visade sig problemen mer komplexa än förväntat.
 
+# Logic Theorist
+
+Härledda steg:
+
+ - Från 'A → B' och 'A' dras 'B'  
+ - Från 'B → C' och 'B' dras 'C'  
+ - Från 'C → D' och 'C' dras 'D'
+
+Startfakta: {'A'}
+
+Alla kända fakta efter inferens:  
+{'A', 'B', 'C', 'D'}
+
+
 ## AI-vintrarna
 
 På 1970-talet och igen på 1980-talet inföll vad som kom att kallas "AI-vintrarna" — perioder då forskningsmedel minskade på grund av uteblivna resultat. Expertssystem, som tidigt lovade automatiserat beslutsfattande, visade sig ofta svåra att underhålla och skala upp.
