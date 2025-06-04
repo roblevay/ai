@@ -1,3 +1,20 @@
+### Etymologi: Artificiell intelligens
+
+Uttrycket **artificiell intelligens** har sina rötter i latin och engelska.
+
+* **Artificiell** kommer från latinets *artificialis*, som betyder "konstgjord" eller "skapad genom konst eller skicklighet". Det är bildat av *ars* (konst, hantverk) och *facere* (att göra).
+
+* **Intelligens** kommer från latinets *intelligentia*, som i sin tur bygger på *intelligere* – "att förstå", sammansatt av *inter* (mellan) och *legere* (att läsa, välja eller samla). Det betecknar alltså förmågan att förstå, resonera eller dra slutsatser.
+
+Begreppet *artificial intelligence* lanserades som ett tekniskt forskningsområde 1956 vid **Dartmouth-konferensen**, där John McCarthy föreslog termen. Syftet var att beskriva maskiners förmåga att efterlikna mänsklig kognition, såsom lärande och problemlösning.
+
+Att kalla något för *artificiell intelligens* är alltså att säga att det handlar om en **konstgjord form av förståelse eller tänkande**, till skillnad från biologisk eller naturlig intelligens.
+
+---
+
+Vill du att den här biten också läggs till i den tidigare Markdown-filen om AI-historik?
+
+
 # En översikt av AI-historiken
 
 Artificiell intelligens (AI) är ett av vår tids mest omdanande teknologiska fält, men dess rötter sträcker sig tillbaka till antiken då myter om mekaniska varelser först formulerades. Den moderna AI-historien började dock på allvar under mitten av 1900-talet, med teoretiska grunder och de första datorerna.
