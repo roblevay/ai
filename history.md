@@ -2,7 +2,7 @@
 
 Artificiell intelligens (AI) är ett av vår tids mest omdanande teknologiska fält, men dess rötter sträcker sig tillbaka till antiken då myter om mekaniska varelser först formulerades. Den moderna AI-historien började dock på allvar under mitten av 1900-talet, med teoretiska grunder och de första datorerna.
 
-## De tidiga åren
+## De tidiga åren 
 
 Begreppet "artificiell intelligens" myntades 1956 under Dartmouth-konferensen, där forskare som John McCarthy, Marvin Minsky och Claude Shannon samlades. De var optimistiska och trodde att maskiner snart skulle kunna lära sig och resonera som människor.
 
