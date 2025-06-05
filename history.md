@@ -31,7 +31,7 @@ Startfakta: {'A'}
 Alla kända fakta efter inferens:  
 {'A', 'B', 'C', 'D'}
 
-För exempel, öppna filen logic-demo.html i en web-browser
+**För exempel, öppna filen logic-demo.html i en web-browser**
 
 ## AI-vintrarna
 
@@ -43,7 +43,7 @@ Under 1990-talet började förhoppningarna återåtervända, mycket tack vare ö
 
 1997 besegrade IBMs Deep Blue världsmästaren i schack, Garry Kasparov, vilket blev en symbolisk milstolpe för AI. Samtidigt började metoder som supportvektormaskiner och beslutsgränser utvecklas för praktisk tillämpning inom bl.a. bild- och textanalys.
 
-För exempel på maskinlärning, öppna filen regression-chart.html i en web-browser
+**För exempel på maskinlärning, öppna filen regression-chart.html i en web-browser**
 
 ## Djupinlärningens ålder
 
